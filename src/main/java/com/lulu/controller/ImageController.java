@@ -15,11 +15,21 @@ public class ImageController {
     @Autowired
     ImageService imageService;
 
+    /**
+     * Save api is used for saving the image data into db
+     * @param uploadRequestBody image id and image url
+     * @return save id
+     */
     @PostMapping("save")
     public Long saveImageContent(@RequestBody UploadRequestBody uploadRequestBody) {
         return imageService.saveImageContent(uploadRequestBody);
     }
 
+    /**
+     * getting the image by id
+     * @param id image id
+     * @return  view image
+     */
     @GetMapping("image/{id}")
     public ResponseEntity<byte[]> getImageContentAsBase64(@PathVariable String id) {
         byte[] image = imageService.getImageContentAsBase64(id);
