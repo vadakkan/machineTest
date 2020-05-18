@@ -54,6 +54,11 @@ public class ImageHelper {
         return null;
     }
 
+    /**
+     * this is used for decoding the encoded image
+     * @param encodedString
+     * @return
+     */
     public static byte[] decodedBytes(String encodedString) {
         byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
         return decodedBytes;
